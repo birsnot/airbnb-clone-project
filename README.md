@@ -125,3 +125,25 @@ Enables users to provide ratings and feedback on properties they have stayed at.
 
 ### Data Optimization
 Implements database indexing and caching strategies to enhance performance. This ensures fast retrieval of frequently accessed data and reduces the load on the backend infrastructure during high-traffic periods.
+
+## API Security
+
+Security is a critical aspect of this backend system, as it handles sensitive user data, financial transactions, and private property information. The following key measures are implemented to ensure secure and reliable API access.
+
+### Authentication
+Token-based authentication (such as JWT) is used to verify user identity and establish secure sessions. This prevents unauthorized access to personal data and ensures only legitimate users can interact with protected endpoints.
+
+### Authorization
+Role-based access control ensures that only users with appropriate permissions can perform certain actions (e.g., only hosts can list properties, only guests can book). This protects the system from misuse and enforces clear access boundaries.
+
+### Rate Limiting
+Limits the number of API requests a user or IP address can make within a given time frame. This helps prevent abuse, brute-force attacks, and denial-of-service (DoS) scenarios that could impact system availability.
+
+### Input Validation and Sanitization
+All incoming data is validated and sanitized to prevent injection attacks such as SQL injection or XSS. This ensures the integrity of the application and protects the underlying data.
+
+### Secure Payment Handling
+Payment-related endpoints are isolated and handled with additional safeguards, such as encrypted data transmission and third-party payment gateway integration. This ensures the security of financial transactions and protects users from fraud.
+
+### HTTPS Enforcement
+All communication with the API is done over HTTPS to encrypt data in transit. This protects sensitive information such as login credentials and payment details from being intercepted during transmission.
