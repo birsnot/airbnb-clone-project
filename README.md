@@ -104,3 +104,24 @@ Represents transactions related to property bookings.
 
 **Relationships:**
 - Each payment is linked to one booking.
+
+
+## Feature Breakdown
+
+### User Management
+Allows users to register, authenticate, and manage their profiles securely. This feature supports both guests and hosts, enabling role-based access to platform functionalities such as listing properties or making bookings.
+
+### Property Management
+Enables hosts to create, update, retrieve, and delete property listings. This feature ensures that detailed and accurate information about available properties is maintained, including descriptions, locations, and pricing.
+
+### Booking System
+Allows users to reserve properties by specifying check-in and check-out dates. It manages booking records, prevents date conflicts, and ensures hosts and guests have access to their booking history.
+
+### Payment Processing
+Handles financial transactions associated with bookings. It ensures payments are securely processed, recorded, and linked to their respective bookings, allowing for future tracking and potential refunds.
+
+### Review System
+Enables users to provide ratings and feedback on properties they have stayed at. This feature helps build trust within the platform and informs future guests about the quality of listings.
+
+### Data Optimization
+Implements database indexing and caching strategies to enhance performance. This ensures fast retrieval of frequently accessed data and reduces the load on the backend infrastructure during high-traffic periods.
