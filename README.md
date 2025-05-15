@@ -37,3 +37,70 @@ Manages the infrastructure for development, staging, and production environments
 
 ### QA Engineer
 Writes and runs test cases to validate backend features. Ensures that all APIs work as expected and meet defined requirements. Reports bugs and works closely with developers to maintain a high-quality codebase.
+
+
+## Database Design
+
+The backend is structured around several core entities that represent the essential components of the Airbnb platform. Each entity includes key fields and is related to others to maintain data integrity and functionality.
+
+### Users
+Represents individuals who can register on the platform as either guests or hosts.
+- `id`: Unique identifier for each user.
+- `name`: Full name of the user.
+- `email`: Unique email address for login and communication.
+- `password_hash`: Securely stored password.
+- `is_host`: Boolean flag indicating if the user is a property host.
+
+**Relationships:**
+- A user can own multiple properties.
+- A user can make multiple bookings.
+- A user can leave multiple reviews.
+
+### Properties
+Represents listings available for booking on the platform.
+- `id`: Unique identifier for each property.
+- `title`: Title or name of the property.
+- `description`: Detailed description of the property.
+- `location`: Address or coordinates of the property.
+- `price_per_night`: Cost per night to book the property.
+
+**Relationships:**
+- Each property is owned by one user (host).
+- A property can have multiple bookings.
+- A property can have multiple reviews.
+
+### Bookings
+Represents reservations made by users for specific properties.
+- `id`: Unique identifier for each booking.
+- `user_id`: The user who made the booking.
+- `property_id`: The property being booked.
+- `start_date`: Booking check-in date.
+- `end_date`: Booking check-out date.
+
+**Relationships:**
+- Each booking is linked to one user.
+- Each booking is linked to one property.
+- Each booking can be associated with a payment.
+
+### Reviews
+Represents feedback left by users about properties.
+- `id`: Unique identifier for each review.
+- `user_id`: The user who wrote the review.
+- `property_id`: The property being reviewed.
+- `rating`: Numeric rating (e.g., 1 to 5).
+- `comment`: Text feedback provided by the user.
+
+**Relationships:**
+- Each review is written by one user.
+- Each review is for one property.
+
+### Payments
+Represents transactions related to property bookings.
+- `id`: Unique identifier for each payment.
+- `booking_id`: The booking associated with the payment.
+- `amount`: Total amount paid.
+- `payment_date`: Date and time of the transaction.
+- `status`: Payment status (e.g., successful, failed, pending).
+
+**Relationships:**
+- Each payment is linked to one booking.
