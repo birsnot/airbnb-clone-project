@@ -147,3 +147,22 @@ Payment-related endpoints are isolated and handled with additional safeguards, s
 
 ### HTTPS Enforcement
 All communication with the API is done over HTTPS to encrypt data in transit. This protects sensitive information such as login credentials and payment details from being intercepted during transmission.
+
+
+## CI/CD Pipeline
+
+### What is CI/CD?
+
+CI/CD stands for Continuous Integration and Continuous Deployment/Delivery. It is a development practice that automates the process of integrating code changes, testing them, and deploying them to production environments. This ensures that new features, bug fixes, and updates can be delivered quickly, reliably, and safely.
+
+### Importance for the Project
+
+Implementing a CI/CD pipeline is crucial for maintaining code quality and ensuring stable releases. It allows the development team to catch bugs early through automated testing, streamline the deployment process, and reduce the risk of manual errors. CI/CD helps maintain a consistent and efficient development workflow as the project scales.
+
+### Tools Used
+
+- **GitHub Actions**: Automates workflows for testing, linting, and deploying code on every push or pull request.
+- **Docker**: Ensures consistent development and production environments by containerizing the application.
+- **Docker Compose**: Manages multi-container applications, such as running the web app, database, and Redis together during integration testing.
+- **Heroku / AWS / DigitalOcean (optional)**: Platforms for deploying the backend service, depending on the project's hosting requirements.
+
